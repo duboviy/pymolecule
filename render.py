@@ -16,6 +16,13 @@ def on_draw():
 
 @window.event
 def on_resize(width, height):
+    glClearColor(0.0, 0.3, 0.0, 0.0)
+    
+    glEnable(GL_DEPTH_TEST)
+    glEnable(GL_LIGHTING)
+    glEnable(GL_LIGHT0)
+    glLightf(GL_LIGHT0, GL_POSITION, 1, 5, 4)
+    
     pass # TODO: implement!
 
 @window.event
