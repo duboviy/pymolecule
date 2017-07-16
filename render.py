@@ -10,9 +10,13 @@ from pyglet.gl.glu import *
 window = Window()
 
 
+def update_frame(dt):
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
+    pass # TODO: implement!
+
 @window.event
 def on_draw():
-    pass # TODO: implement!
+    update_frame(0)
 
 @window.event
 def on_resize(width, height):
@@ -41,7 +45,7 @@ def on_key_press(symbol, modifiers):
         update_frame(-1)
     elif symbol == key.RIGHT:
         update_frame(1)
- 
+
 
 if __name__=="__main__":
     pyglet.clock.schedule_interval(update_frame, 0.02)
