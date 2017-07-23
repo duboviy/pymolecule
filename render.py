@@ -13,6 +13,9 @@ window = Window()
 def update_frame(dt):
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
     glLoadIdentity() # load identity matrix
+   
+    pass # TODO: implement rotation logic
+    molecule.draw()
     pass # TODO: implement!
 
 @window.event
