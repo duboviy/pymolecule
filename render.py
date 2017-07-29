@@ -14,9 +14,11 @@ def update_frame(dt):
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
     glLoadIdentity() # load identity matrix
    
-    pass # TODO: implement rotation logic
+    # TODO: implement rotation logic without global vars
+    global rotation
+    rotation += dt * 10 # more time - bigger rotation
+    glRotatef(rotation, 0, 1, 0)
     molecule.draw()
-    pass # TODO: implement!
 
 @window.event
 def on_draw():
