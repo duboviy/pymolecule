@@ -20,6 +20,7 @@ def update_frame(dt):
     glRotatef(rotation, 0, 1, 0)
     molecule.draw()
 
+    
 @window.event
 def on_draw():
     update_frame(0)
