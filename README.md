@@ -1,6 +1,8 @@
-# pymolecule [Work in progress]
+# pymolecule
 
 Molecular viewer
+
+## Summary
 
 Draw atoms in different colors and place them in different places of space, thus obtaining a molecule.
 To do this, you need to know the coordinates, that's why chemical expert system Open Babel is used, 
@@ -43,5 +45,5 @@ HO 3.89297302828 -3.59188323274 -1.91963488602
 HO 3.3506978517 -1.05986229308 -1.37211748251
 ```
 
-You can use module [render.py] to visualize Python code. 
+You can use module [render.py](render.py) to visualize Python code. 
 It is an entry point to run viewer app based on OpenGL library.
