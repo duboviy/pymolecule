@@ -1,6 +1,7 @@
-# pymolecule
+<h1><img src="https://raw.githubusercontent.com/duboviy/pymolecule/render/logo.png" height=85 alt="logo" title="logo"> pymolecule</h1>
 
 Molecular viewer
+<h1><img src="https://raw.githubusercontent.com/duboviy/pymolecule/render/glucose.png" alt="glucose" title="glucose"></h1>
 
 ## Summary
 
