@@ -15,7 +15,7 @@ class Molecule(object):
         self.atoms = atoms
  
     @classmethod
-    def import_from_file(self, fn):
+    def load_from_file(self, fn):
         """ An alternative constructor to instantiate molecule from text file. """
         atoms = []
         with open(fn) as f:
@@ -33,11 +33,8 @@ class Molecule(object):
             # draw the sphere of radius 1 and the color of the corresponding atom type
             draw_sphere(1, palette.get_color(atom[0]))
             glPopMatrix() # load the saved matrix of the model
- 
- 
-molecule = Molecule.import_from_file('glucose.dat')
- 
- 
+
+
 def draw_sphere(radius, color):
     glPolygonMode(GL_FRONT_AND_BACK, GL_FILL)
      
@@ -98,5 +95,21 @@ def on_key_press(symbol, modifiers):
 
 
 if __name__=="__main__":
+    from get_atoms import get_atoms
+ 
+    # SMILE - simplified molecular-input line-entry system
+    smile = input("Enter molecule in SMILE format (e.g., Glucose -> OC[C@H]1OC(O)[C@H](O)[C@@H](O)[C@@H]1O:")
+    atoms = get_atoms(smile)
+    
+    # output used only for debug purpose
+    for atom in atoms:
+        print(atom.type, ' '.join(map(str, atom.coords)))
+    
+    molecule = Molecule(atoms)
+    ### also you can use an alternative constructor to instantiate molecule from text file:
+    # molecule = Molecule.load_from_file('glucose.dat') # example of usage
+    ### therefore you can skip input SMILE steps and only load preliminarily prepared file
+    ### -> to increase and boost your development+debug speed
+  
     pyglet.clock.schedule_interval(update_frame, 0.02)
     pyglet.app.run()
