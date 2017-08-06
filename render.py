@@ -6,6 +6,8 @@ from pyglet.window import key, Window
 from pyglet.gl import *
 from pyglet.gl.glu import *
 
+from colorizer import palette
+
 
 window = Window()
 
